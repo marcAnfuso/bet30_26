@@ -315,7 +315,7 @@ export default function Home() {
           </div>
 
           {/* Spacer to maintain layout and center the background Joker */}
-          <div className="w-full max-w-[550px] flex-shrink-0 my-32"></div>
+          <div className="w-full max-w-[550px] flex-shrink-0 my-24"></div>
 
           {/* Bottom Section: Main CTA Button */}
           <div className="w-full max-w-sm px-4">
@@ -367,7 +367,7 @@ export default function Home() {
                 onClick={() => handleWhatsAppClick('main_button')}
                 className="relative overflow-hidden text-white font-black text-base px-6 py-3 rounded-xl flex items-center justify-center gap-2 border-3"
                 style={{
-                  background: 'linear-gradient(90deg, #fb7185 0%, #f43f5e 50%, #fb7185 100%)',
+                  background: 'linear-gradient(90deg, #22c55e 0%, #16a34a 50%, #22c55e 100%)',
                   borderColor: 'rgba(0, 0, 0, 0.4)',
                   borderWidth: '3px',
                   boxShadow: '0 0 0 1px rgba(255, 255, 255, 0.3), 0 8px 24px rgba(0, 0, 0, 0.4)',
@@ -377,14 +377,14 @@ export default function Home() {
                 animate={{
                   y: [0, -8, 0],
                   boxShadow: [
-                    "0 0 30px rgba(251, 113, 133, 0.8)",
-                    "0 0 50px rgba(251, 113, 133, 1)",
-                    "0 0 30px rgba(251, 113, 133, 0.8)"
+                    "0 0 30px rgba(34, 197, 94, 0.8)",
+                    "0 0 50px rgba(34, 197, 94, 1)",
+                    "0 0 30px rgba(34, 197, 94, 0.8)"
                   ],
                   background: [
-                    'linear-gradient(90deg, #fb7185 0%, #f43f5e 50%, #fb7185 100%)',
-                    'linear-gradient(90deg, #f43f5e 0%, #fb7185 50%, #f43f5e 100%)',
-                    'linear-gradient(90deg, #fb7185 0%, #f43f5e 50%, #fb7185 100%)',
+                    'linear-gradient(90deg, #22c55e 0%, #16a34a 50%, #22c55e 100%)',
+                    'linear-gradient(90deg, #16a34a 0%, #22c55e 50%, #16a34a 100%)',
+                    'linear-gradient(90deg, #22c55e 0%, #16a34a 50%, #22c55e 100%)',
                   ]
                 }}
                 transition={{
