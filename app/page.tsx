@@ -202,10 +202,10 @@ export default function Home() {
                 style={{maxHeight: '250px', objectFit: 'contain'}}
                 animate={{
                   filter: [
-                    'drop-shadow(0 0 10px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.4))',
-                    'drop-shadow(0 0 15px rgba(251, 113, 133, 0.8)) drop-shadow(0 0 30px rgba(251, 113, 133, 0.5))',
-                    'drop-shadow(0 0 12px rgba(251, 191, 36, 0.8)) drop-shadow(0 0 28px rgba(251, 191, 36, 0.5))',
-                    'drop-shadow(0 0 10px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.4))',
+                    'drop-shadow(1px 1px 0 rgba(0,0,0,0.8)) drop-shadow(-1px -1px 0 rgba(255,255,255,0.3)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.4))',
+                    'drop-shadow(1px 1px 0 rgba(0,0,0,0.8)) drop-shadow(-1px -1px 0 rgba(255,255,255,0.3)) drop-shadow(0 0 15px rgba(251, 113, 133, 0.8)) drop-shadow(0 0 30px rgba(251, 113, 133, 0.5))',
+                    'drop-shadow(1px 1px 0 rgba(0,0,0,0.8)) drop-shadow(-1px -1px 0 rgba(255,255,255,0.3)) drop-shadow(0 0 12px rgba(251, 191, 36, 0.8)) drop-shadow(0 0 28px rgba(251, 191, 36, 0.5))',
+                    'drop-shadow(1px 1px 0 rgba(0,0,0,0.8)) drop-shadow(-1px -1px 0 rgba(255,255,255,0.3)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.4))',
                   ]
                 }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
