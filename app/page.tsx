@@ -427,7 +427,9 @@ export default function Home() {
                   ♠
                 </motion.div>
 
+                <WhatsAppIcon className="w-5 h-5 text-white z-10" />
                 <span className="uppercase tracking-wider drop-shadow-lg z-10 relative">Pedinos tu usuario!</span>
+                <WhatsAppIcon className="w-5 h-5 text-white z-10" />
 
                 {/* Animated shine effect */}
                 <motion.div
