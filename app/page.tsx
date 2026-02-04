@@ -195,11 +195,20 @@ export default function Home() {
               variants={fadeIn}
               className="text-center relative w-full px-4 mt-4"
             >
-              <img
+              <motion.img
                 src="/bet30.svg"
                 alt="Bet30 Casino"
                 className="w-full h-auto max-w-lg mx-auto relative z-10"
                 style={{maxHeight: '250px', objectFit: 'contain'}}
+                animate={{
+                  filter: [
+                    'drop-shadow(0 0 10px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.4))',
+                    'drop-shadow(0 0 15px rgba(251, 113, 133, 0.8)) drop-shadow(0 0 30px rgba(251, 113, 133, 0.5))',
+                    'drop-shadow(0 0 12px rgba(251, 191, 36, 0.8)) drop-shadow(0 0 28px rgba(251, 191, 36, 0.5))',
+                    'drop-shadow(0 0 10px rgba(56, 189, 248, 0.7)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.4))',
+                  ]
+                }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               />
             </motion.div>
 
@@ -348,7 +357,7 @@ export default function Home() {
                       BONO ESPECIAL
                     </span>
                     <span className="text-black/80 font-bold text-xs tracking-wide">
-                      en tu primer carga
+                      EN TU PRIMER CARGA
                     </span>
                   </div>
                   {/* Shine effect */}
@@ -495,7 +504,7 @@ export default function Home() {
                   BONO ESPECIAL
                 </span>
                 <span className="text-black/80 font-bold text-xl">
-                  en tu primer carga
+                  EN TU PRIMER CARGA
                 </span>
               </div>
               {/* Shine effect */}
