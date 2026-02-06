@@ -300,10 +300,10 @@ export default function Home() {
               </div>
 
               {/* Bottom row - 1 card centered */}
-              {/* Card 3 - Soporte */}
+              {/* Card 3 - Pagos Totales */}
               <div className="relative">
                 <div className="relative rounded-xl p-1">
-                  <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '130px', height: 'auto'}} className="object-contain" />
+                  <img src="/pagostotales.png" alt="Pagos Totales" style={{width: '200px', height: 'auto'}} className="object-contain" />
                 </div>
                 <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{zIndex: 10}}>
                   <rect
@@ -586,7 +586,7 @@ export default function Home() {
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                 >
-                  <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '280px', height: 'auto'}} className="object-contain" />
+                  <img src="/pagostotales.png" alt="Pagos Totales" style={{width: '340px', height: 'auto'}} className="object-contain" />
                 </motion.div>
               </motion.div>
             </motion.aside>
