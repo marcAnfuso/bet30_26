@@ -4,6 +4,15 @@ import { useState, useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
 import { useMetaTracking } from "./hooks/useMetaTracking";
 
+// Links de WhatsApp rotativos - TODO: reemplazar con los links reales
+const WHATSAPP_LINKS = [
+  'https://wa.me/5491100000001?text=Hola%20quiero%20mi%20usuario',  // Línea 1
+  'https://wa.me/5491100000002?text=Hola%20quiero%20mi%20usuario',  // Línea 2
+  'https://wa.me/5491100000003?text=Hola%20quiero%20mi%20usuario',  // Línea 3
+  'https://wa.me/5491100000004?text=Hola%20quiero%20mi%20usuario',  // Línea 4
+  'https://wa.me/5491100000005?text=Hola%20quiero%20mi%20usuario',  // Línea 5
+];
+
 // Custom WhatsApp icon component
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg
@@ -19,9 +28,12 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 export default function Home() {
   const { trackLead } = useMetaTracking();
   const [mounted, setMounted] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState(WHATSAPP_LINKS[0]);
 
   useEffect(() => {
     setMounted(true);
+    const randomIndex = Math.floor(Math.random() * WHATSAPP_LINKS.length);
+    setWhatsappLink(WHATSAPP_LINKS[randomIndex]);
   }, []);
 
   const handleWhatsAppClick = (source: 'main_button' | 'secondary_button') => {
@@ -265,7 +277,7 @@ export default function Home() {
                 {/* Card 2 - Pagos */}
                 <div className="relative">
                   <div className="relative rounded-xl p-1">
-                    <img src="/pagos-blueglow.png" alt="Pagos Instantáneos" style={{width: '130px', height: 'auto'}} className="object-contain" />
+                    <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '130px', height: 'auto'}} className="object-contain" />
                   </div>
                   <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{zIndex: 10}}>
                     <motion.rect
@@ -376,7 +388,7 @@ export default function Home() {
               </motion.div>
 
               <motion.a
-                href="https://wa.pe/w6F8J2YMe5"
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppClick('main_button')}
@@ -560,7 +572,7 @@ export default function Home() {
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 >
-                  <img src="/pagos-blueglow.png" alt="Pagos Instantáneos" style={{width: '280px', height: 'auto'}} className="object-contain" />
+                  <img src="/soporte-blueglow.png" alt="Soporte 24/7" style={{width: '280px', height: 'auto'}} className="object-contain" />
                 </motion.div>
                 <motion.div
                   className="relative"
@@ -606,7 +618,7 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="flex flex-col gap-4 w-full">
                 <motion.a
-                  href="https://wa.pe/w6F8J2YMe5"
+                  href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => handleWhatsAppClick('main_button')}
@@ -671,7 +683,7 @@ export default function Home() {
                 </motion.a>
 
                 <motion.a
-                  href="https://wa.pe/w6F8J2YMe5"
+                  href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => handleWhatsAppClick('secondary_button')}
