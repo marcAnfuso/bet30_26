@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
 import { useMetaTracking } from "./hooks/useMetaTracking";
 
-// Links de WhatsApp rotativos - TODO: reemplazar con los links reales
+// Links de WhatsApp rotativos
 const WHATSAPP_LINKS = [
-  'https://wa.me/5491100000001?text=Hola%20quiero%20mi%20usuario',  // Línea 1
-  'https://wa.me/5491100000002?text=Hola%20quiero%20mi%20usuario',  // Línea 2
-  'https://wa.me/5491100000003?text=Hola%20quiero%20mi%20usuario',  // Línea 3
-  'https://wa.me/5491100000004?text=Hola%20quiero%20mi%20usuario',  // Línea 4
-  'https://wa.me/5491100000005?text=Hola%20quiero%20mi%20usuario',  // Línea 5
+  'https://wa.pe/ZudwE7o5yo',  // API 1 - 4241
+  'https://wa.pe/f2BGC9UaR5',  // API 2 - 8455
+  'https://wa.pe/xejtjFQcIc',  // API 3 - 3615
+  'https://wa.pe/A3CxJcTKkP',  // API 4 - 9643
+  'https://wa.pe/1NZSzDCkyY',  // API 5 - 9414
 ];
 
 // Custom WhatsApp icon component
