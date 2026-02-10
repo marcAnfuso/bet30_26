@@ -39,15 +39,16 @@ export function useMetaTracking() {
   }, []);
 
   // Eventos específicos predefinidos para facilitar el uso
-  const trackLead = useCallback((source: string) => {
-    // Disparar evento custom ClickWhatsApp1
-    trackEvent('ClickWhatsApp1', {
+  const trackLead = useCallback((source: string, trackingId?: string) => {
+    // Disparar evento custom ClicktoKommo con external_id para atribución Meta
+    trackEvent('ClicktoKommo', {
       content_name: 'Solicitud de Usuario WhatsApp',
       content_category: 'Lead Generation',
       content_type: 'whatsapp_click',
       source: source, // 'main_button' o 'secondary_button'
       value: 2.5, // Valor estimado del lead para ROAS (entre $2-3 USD)
       currency: 'USD',
+      external_id: trackingId,
     });
   }, [trackEvent]);
 

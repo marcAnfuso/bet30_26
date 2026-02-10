@@ -4,13 +4,24 @@ import { useState, useEffect } from "react";
 import { motion, type Variants } from "framer-motion";
 import { useMetaTracking } from "./hooks/useMetaTracking";
 
-// Links de WhatsApp rotativos
-const WHATSAPP_LINKS = [
-  'https://wa.pe/ZudwE7o5yo',  // API 1 - 4241
-  'https://wa.pe/f2BGC9UaR5',  // API 2 - 8455
-  'https://wa.pe/xejtjFQcIc',  // API 3 - 3615
-  'https://wa.pe/A3CxJcTKkP',  // API 4 - 9643
-  'https://wa.pe/1NZSzDCkyY',  // API 5 - 9414
+// Genera tracking ID único: timestamp base36 + 2 chars random (max 10 chars)
+function generateTrackingId(): string {
+  const timestamp = Date.now().toString(36);
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let random = '';
+  for (let i = 0; i < 2; i++) {
+    random += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return `${timestamp}${random}`.slice(0, 10);
+}
+
+// 5 líneas de WhatsApp con mensajes predefinidos
+const WHATSAPP_LINES = [
+  { phone: '541123334241', message: 'Hola me gustaría crear usuario \u263a\ufe0f' },   // API 1 - 4241
+  { phone: '541144308455', message: 'Buenas me creas usuario \ud83e\udd17' },           // API 2 - 8455
+  { phone: '541158023615', message: 'Hola me gustaría crear mi usuario \ud83d\ude0a' }, // API 3 - 3615
+  { phone: '541138449643', message: 'Buenas, quiero usuario \ud83d\ude01' },            // API 4 - 9643
+  { phone: '541140339414', message: 'Hola buenas, me podría crear usuario \u263a\ufe0f' }, // API 5 - 9414
 ];
 
 // Custom WhatsApp icon component
@@ -28,16 +39,21 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 export default function Home() {
   const { trackLead } = useMetaTracking();
   const [mounted, setMounted] = useState(false);
-  const [whatsappLink, setWhatsappLink] = useState(WHATSAPP_LINKS[0]);
+  const [whatsappLink, setWhatsappLink] = useState('');
+  const [trackingId, setTrackingId] = useState('');
 
   useEffect(() => {
     setMounted(true);
-    const randomIndex = Math.floor(Math.random() * WHATSAPP_LINKS.length);
-    setWhatsappLink(WHATSAPP_LINKS[randomIndex]);
+    const id = generateTrackingId();
+    setTrackingId(id);
+    const randomIndex = Math.floor(Math.random() * WHATSAPP_LINES.length);
+    const line = WHATSAPP_LINES[randomIndex];
+    const messageWithRef = `${line.message}\n\n[REF:${id}]`;
+    setWhatsappLink(`https://wa.me/${line.phone}?text=${encodeURIComponent(messageWithRef)}`);
   }, []);
 
   const handleWhatsAppClick = (source: 'main_button' | 'secondary_button') => {
-    trackLead(source);
+    trackLead(source, trackingId);
   };
 
   // Animation variants
